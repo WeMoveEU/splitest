@@ -1,0 +1,5 @@
+<?php
+
+function splitest_preprocess_page(&$vars, $hook) {
+  drupal_add_js(drupal_get_path('module', 'splitest') . '/js/alephbet.js');
+}

@@ -1,0 +1,5 @@
+name = Split tests (ab testing)
+description = allow to test two variants of a page, by presenting them to your visitors and see which one works best
+core = 7.x
+package = Statistics
+dependencies[] = googleanalytics
