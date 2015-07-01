@@ -1,0 +1,56 @@
+<section class="toolkit">
+    <div class="section-two">
+        <form class="inputs">
+            <p>
+                <label for="experiments">Choose experiment</label></br>
+                <select id="experiments" name="experiments">
+                    <option value="0">-- choose experiment --</option>
+                </select>
+                <ul>
+                    <li>Date Fetching: <span id="dateFetching"></span></li>
+                    <li>Categories: <span id="categories"></span> </li>
+                    <li>Goal: <span id="goals"></span></li>
+                </ul>
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Label</th>
+                        <th>Number of successes</th>
+                        <th>Number of trials</th>
+                    </tr>
+                </thead>
+                <tbody class="inputs-table">
+                    <tr class="input-row baseline-input-row">
+                        <td>
+                          <input type="text" class="label-input" value="Baseline"
+                                 required />
+                        </td>
+                        <td><input type="text" class="num-successes-input" required /></td>
+                        <td><input type="text" class="num-samples-input" required /></td>
+                        <td>
+                          <a href="#" class="remove-input-link">
+                            Remove
+                          </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul class="options">
+                <li>Interval confidence level:
+                    <input type="text" class="interval-confidence-level" value="0.95" />
+                </li>
+                <li>Use multiple testing correction:
+                    <input type="checkbox" class="use-multiple-test-correction" checked />
+                </li>
+            </ul>
+            <p>
+                <button type="submit" class="submit-button">Compute</button>
+                <a href="#" class="add-input-link">Add another group</a>
+            </p>
+        </form>
+    </div>
+    <div>
+        <div class="results"></div>
+    </div>
+</section>
