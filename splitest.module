@@ -1,15 +1,6 @@
 <?php
 
 function splitest_preprocess_page(&$vars, $hook) {
-  drupal_add_css(drupal_get_path('module', 'splitest').'/css/abba1.css');
-  drupal_add_js(array('splitest' => array('modulePath' => drupal_get_path('module', 'splitest'))), 'setting');
-  drupal_add_js(drupal_get_path('module', 'splitest').'/lib/protovis-r3.2.js');
-  drupal_add_js(drupal_get_path('module', 'splitest').'/lib/hash.js');
-  drupal_add_js(drupal_get_path('module', 'splitest').'/lib/jstat-min-08fb5e8.js');
-  drupal_add_js(drupal_get_path('module', 'splitest').'/abba/stats.js');
-  drupal_add_js(drupal_get_path('module', 'splitest').'/abba/render.js');
-  drupal_add_js(drupal_get_path('module', 'splitest').'/js/app.js');
-  drupal_add_js(drupal_get_path('module', 'splitest').'/js/onload.js');
   drupal_add_js(drupal_get_path('module', 'splitest').'/js/alephbet-0.6.0.mod.js');
 }
 
@@ -26,6 +17,15 @@ function splitest_menu() {
 }
 
 function splitest_page() {
+  drupal_add_css(drupal_get_path('module', 'splitest').'/css/abba1.css');
+  drupal_add_js(array('splitest' => array('modulePath' => drupal_get_path('module', 'splitest'))), 'setting');
+  drupal_add_js(drupal_get_path('module', 'splitest').'/lib/protovis-r3.2.js');
+  drupal_add_js(drupal_get_path('module', 'splitest').'/lib/hash.js');
+  drupal_add_js(drupal_get_path('module', 'splitest').'/lib/jstat-min-08fb5e8.js');
+  drupal_add_js(drupal_get_path('module', 'splitest').'/abba/stats.js');
+  drupal_add_js(drupal_get_path('module', 'splitest').'/abba/render.js');
+  drupal_add_js(drupal_get_path('module', 'splitest').'/js/app.js');
+  drupal_add_js(drupal_get_path('module', 'splitest').'/js/onload.js');
   return implode('', file(dirname( __FILE__ ).DIRECTORY_SEPARATOR.'index.html'));
 }
 
