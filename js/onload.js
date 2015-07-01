@@ -49,7 +49,6 @@ jQuery(function() {
     experiments.change(function(e) {
         var exp = this.value;
         jsonContent = {};
-        jQuery('.results').empty();
         if (exp == '0') {
             dateFetching.text('');
             categories.text('');

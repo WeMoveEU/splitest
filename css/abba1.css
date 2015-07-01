@@ -1,3 +1,7 @@
 .error {
     background-image: none !important;
 }
+
+.results {
+	margin-bottom: 2em;
+}
