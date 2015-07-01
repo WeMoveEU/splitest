@@ -3,5 +3,10 @@
 }
 
 .results {
+	margin-top: 2em;
 	margin-bottom: 2em;
+}
+
+#experiments {
+	font-size: 2em;
 }
