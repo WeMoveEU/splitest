@@ -9,7 +9,7 @@ function splitest_field_formatter_info() {
   );
 }
 
-function splitest_field_formatter_view($entity_type, $entity, $field, $instance, $lang) {
+function splitest_field_formatter_view($entity_type, $entity, $field, $instance, $lang,  $items, $display) {
   $elements = array();
   die ($display ['type']));
   foreach ($items as $delta => $item) {
