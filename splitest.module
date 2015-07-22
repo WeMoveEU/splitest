@@ -1,5 +1,25 @@
 <?php
 
+function splitest_field_formatter_info() {
+ return array(
+    'alephbet' => array(
+      'label' => t('ab test configuration'),
+      'field types' => array('textarea'),
+    )
+  );
+}
+
+function splitest_field_formatter_view($entity_type, $entity, $field, $instance, $lang) {
+ $elements = array();
+  foreach ($items as $delta => $item) {
+   print_r($delta);
+    $elements[$delta] = array(
+      '#markup' => theme('easythumb_field_formatter_' . $display['type'], array('element' => $item)),
+    );
+  }
+  return $elements;
+}
+
 function splitest_preprocess_page(&$vars, $hook) {
   drupal_add_js(drupal_get_path('module', 'splitest').'/js/alephbet-0.6.0.mod.js');
 }
