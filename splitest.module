@@ -4,13 +4,14 @@ function splitest_field_formatter_info() {
  return array(
     'alephbet' => array(
       'label' => t('ab test configuration'),
-      'field types' => array('textarea'),
+      'field types' => array('text_long'),
     )
   );
 }
 
 function splitest_field_formatter_view($entity_type, $entity, $field, $instance, $lang) {
- $elements = array();
+  $elements = array();
+  die ($display ['type']));
   foreach ($items as $delta => $item) {
    print_r($delta);
     $elements[$delta] = array(
