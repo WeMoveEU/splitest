@@ -1,65 +1,57 @@
 <?php
 
 function splitest_field_formatter_info() {
- return array(
-    'alephbet' => array(
-      'label' => t('ab test configuration'),
-      'field types' => array('text_long'),
-    )
-  );
+    return array(
+        'alephbet' => array(
+            'label' => t('ab test configuration'),
+            'field types' => array('text_long'),
+        )
+    );
 }
 
 function splitest_field_formatter_view($entity_type, $entity, $field, $instance, $lang,  $items, $display) {
   $elements = array();
-  die ($display ['type']));
   foreach ($items as $delta => $item) {
-   print_r($delta);
-    $elements[$delta] = array(
-      '#markup' => theme('easythumb_field_formatter_' . $display['type'], array('element' => $item)),
-    );
+      print_r($delta);
+      $elements[$delta] = array(
+          '#markup' => theme('easythumb_field_formatter_' . $display['type'], array('element' => $item)),
+      );
   }
   return $elements;
 }
 
 function splitest_preprocess_page(&$vars, $hook) {
-  drupal_add_js(drupal_get_path('module', 'splitest').'/js/alephbet-0.6.0.mod.js');
+    drupal_add_js(drupal_get_path('module', 'splitest').'/js/alephbet-0.6.0.mod.js');
 }
 
 function splitest_menu() {
-  $items = array();
-  $items['ab'] = array(              
-    'title' => 'Split tests (ab testing)',  
-    'page callback' => 'splitest_page',  
-    //'access callback' => 'splitest_access', 
-    //'access arguments' => array('administrator'),
-    'access arguments' => array('administer splitest'),
-  );
-  return $items;
+    $items = array();
+    $items['ab'] = array(
+        'title' => 'Split tests (ab testing)',
+        'page callback' => 'splitest_page',
+        'access arguments' => array('administer splitest'),
+    );
+    return $items;
 }
 
 function splitest_page() {
-  drupal_add_css(drupal_get_path('module', 'splitest').'/css/abba1.css');
-  drupal_add_js(array('splitest' => array('modulePath' => drupal_get_path('module', 'splitest'))), 'setting');
-  drupal_add_js(drupal_get_path('module', 'splitest').'/lib/protovis-r3.2.js');
-  drupal_add_js(drupal_get_path('module', 'splitest').'/lib/hash.js');
-  drupal_add_js(drupal_get_path('module', 'splitest').'/lib/jstat-min-08fb5e8.js');
-  drupal_add_js(drupal_get_path('module', 'splitest').'/abba/stats.js');
-  drupal_add_js(drupal_get_path('module', 'splitest').'/abba/render.js');
-  drupal_add_js(drupal_get_path('module', 'splitest').'/js/app.js');
-  drupal_add_js(drupal_get_path('module', 'splitest').'/js/onload.js');
-  return implode('', file(dirname( __FILE__ ).DIRECTORY_SEPARATOR.'index.html'));
+    drupal_add_css(drupal_get_path('module', 'splitest').'/css/abba1.css');
+    drupal_add_js(array('splitest' => array('modulePath' => drupal_get_path('module', 'splitest'))), 'setting');
+    drupal_add_js(drupal_get_path('module', 'splitest').'/lib/protovis-r3.2.js');
+    drupal_add_js(drupal_get_path('module', 'splitest').'/lib/hash.js');
+    drupal_add_js(drupal_get_path('module', 'splitest').'/lib/jstat-min-08fb5e8.js');
+    drupal_add_js(drupal_get_path('module', 'splitest').'/abba/stats.js');
+    drupal_add_js(drupal_get_path('module', 'splitest').'/abba/render.js');
+    drupal_add_js(drupal_get_path('module', 'splitest').'/js/app.js');
+    drupal_add_js(drupal_get_path('module', 'splitest').'/js/onload.js');
+    return implode('', file(dirname( __FILE__ ).DIRECTORY_SEPARATOR.'index.html'));
 }
 
-/*function splitest_access($role) {
-  global $user;
-  return in_array($role, $user->roles);
-}*/
-
 function splitest_permission() {
-  return array(
-    'administer splitest' => array(
-      'title' => t('Administer Splitest'),
-      'description' => t('Access to Splitest module on administer permission.'),
-    ),
-  );
+    return array(
+        'administer splitest' => array(
+            'title' => t('Administer Splitest'),
+            'description' => t('Access to Splitest module on administer permission.'),
+        ),
+    );
 }
