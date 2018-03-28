@@ -2,4 +2,4 @@ name = Split tests (ab testing)
 description = Allow to test multiple variants of a page (abn), by presenting them to your visitors and see which one works best
 core = 7.x
 package = Statistics
-dependencies[] = googleanalytics
+; dependencies[] = googleanalytics
